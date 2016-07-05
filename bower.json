@@ -1,0 +1,12 @@
+{
+	"name": "lillad",
+	"version": "0.0.1",
+	"dependencies": {
+		"bootstrap": "~3.3.0",
+		"fontawesome": "~4.5.0",
+		"jquery": "~2.2.1",
+		"markdown-js": "*",
+		"moment": "*"
+	},
+	"devDependencies": {}
+}

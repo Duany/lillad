@@ -1,0 +1,41 @@
+<% include ../header.html %>
+<div class="container all-blog" id="divbloglist">
+    <% if (blogs.length) { %>
+    <% blogs.forEach(function(blog){ %>
+    <div class="blog-detail">
+        <h3>
+            <a href='./blog/<%= blog._id %>' target="_blank" class="blog-title"><%= blog.title %></a>
+        </h3>
+        <div class="blog-content">
+            <%= blog.html_content%>
+        </div>
+        <div class="blog-content-footer">
+            <span><%= blog.time.day %></span>
+            <%if(blog.tags){%>
+            <% blog.tags.forEach(function(tag){ %>
+            <a href="tag/<%=tag.tag%>" target="_blank" class="pull-right" title="<%=tag.tag%>">
+                <i class="fa fa-tags"></i>
+            </a>
+            <%})%>
+            <%}else{%>
+            <a href="tag/" target="_blank" class="pull-right">
+                <i class="fa fa-tags"></i>
+            </a>
+            <%}%>
+        </div>
+    </div>
+    <%})%>
+    <%if(!isLastPage){%>
+    <div class="row ajax text-center">
+        <button data-loading-text="loading..." type="button" data-page="1" data-last_date ="<%=blogs[blogs.length-1].createdate%>"
+                class="btn-primary btn btn-block btn-large" onclick="getNextPageBlog(this)">More
+        </button>
+    </div>
+    <%} } else{%>
+    <div>
+        暂无日志信息！
+    </div>
+    <%}%>
+</div>
+<% include ../footer.html %>
+<script type="text/javascript" src="../../scripts/blog/blogoperation.js"></script>

@@ -1,0 +1,124 @@
+.background {
+  margin-top: 0;
+  background-color: #70B8C4;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+.idle-touming {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.idle-touming .idle-wrapper {
+  color: #fff;
+  max-width: 960px;
+  height: 100%;
+  padding: 120px 20px 10px 10px;
+  margin: 0px auto;
+  text-align: left;
+}
+.idle-touming a {
+  color: rgba(255, 255, 255, 0.3);
+}
+.idle-touming a i {
+  font-size: 4em;
+}
+.idle-touming .idle-title {
+  margin-top: 20px;
+  font-size: 50px;
+}
+.idle-touming .quote-warpper {
+  font-size: 13px;
+  margin: 50px auto;
+  max-width: 100%;
+}
+.idle-wrapper {
+  color: rgba(255, 255, 255, 0);
+  max-width: 960px;
+  padding: 100px 20px 10px 10px;
+  margin: 0px auto;
+  text-align: left;
+}
+.idle-wrapper .logo .img {
+  display: block;
+  padding: 20px;
+  max-width: 350px;
+}
+.idle-wrapper .logo .img img {
+  max-width: 100%;
+}
+.idle-wrapper .logo .faith {
+  margin: 40px 20px 20px;
+  font-size: 1.6em;
+  color: #fff;
+}
+.idle-wrapper .idle-index-content {
+  font-size: 13px;
+  margin: 20px;
+  color: white;
+}
+.idle-cover {
+  font-size: 16px;
+  margin: 0 auto;
+  width: 100%;
+}
+.idle-cover .idle-title {
+  background-color: rgba(255, 255, 255, 0);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.idle-cover .idle-title h2 {
+  display: block;
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 40px;
+  height: 120px;
+  line-height: 120px;
+  color: rgba(255, 255, 255, 0);
+}
+.idle-cover .idle-content {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.idle-cover .idle-content img {
+  width: 100%;
+}
+.blog-index {
+  font-size: 16px;
+  margin: 0 auto;
+  width: 100%;
+}
+.blog-index .brand {
+  width: 100%;
+  height: 120px;
+  line-height: 120px;
+  background-color: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.blog-index .brand h2 {
+  display: block;
+  max-width: 900px;
+  margin: 0px auto;
+  font-size: 40px;
+  line-height: 120px;
+  color: #6495ed;
+}
+.blog-index .content {
+  display: block;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.blog-index .content .blog-index-content {
+  width: 100% !important;
+  padding: 20px;
+}
+.blog-index .content .blog-index-content .blog-img {
+  width: 100%;
+}
+.blog-index .content .blog-index-content .blog-img img {
+  width: 100%;
+}
+.blog-index .content .blog-index-content .blog-content {
+  padding: 0px;
+}

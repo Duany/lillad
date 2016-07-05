@@ -1,0 +1,99 @@
+<% include ../header.html %>
+<div class="container blog-editor" id="diveditidle">
+    <div class="blog-border" >
+        <!--标题头-->
+        <div class="blog-editor-head">
+            <div class="bg_mode_gb_title">
+                <h3><span id="topBar">写日志</span></h3>
+            </div>
+            <div class="mode_gb_other pull-right">
+                <a href="/manage" target="_self">返回日志列表</a>
+            </div>
+        </div>
+        <div class="blog-editor-toolbar">
+            <form id="uploadImg" enctype="multipart/form-data" method="post">
+                <a href="javascript:;" class="file">选择文件
+                    <input type="file" data-type = 'Img' multiple="multiple" accept="image/jpeg,image/png,image/bmp,image/gif" onchange="uploadImg(this)" data-type="normal">
+                </a>
+            </form>
+            <form id="uploadBgImg" enctype="multipart/form-data" method="post">
+                <a href="javascript:;" class="a-upload">选择背景图片
+                    <input type="file" data-type = 'BgImg' accept="image/jpeg,image/x-png,image/png,image/pjpeg" onchange="uploadImg(this)" data-type="background">
+                </a>
+            </form>
+        </div>
+        <form class="blog-editor-form" method="post">
+            <div class="blog-editor-content">
+                <% if(action === 'addidle'){%>
+                <!--编辑区域-->
+                <input style="display: none" name="back_img" id="inputbackgroudImg">
+                <div class="blog-editor-title">
+                    <input type="text" required id="title" name="title" placeholder="标题"/>
+                </div>
+                <div class="blog-editor-quote">
+                    <textarea rows="4" id="quote" name="quote" placeholder="简介"></textarea>
+                </div>
+                <div class="blog-editor-body">
+                 <textarea name="content" required id="textareacontent"></textarea>
+                </div>
+                <div class="fun_target">
+                    <label class="tag_label">标签:</label>
+                    <input class="tag_input" name='tag' id="blogtagtxt"/>
+                </div>
+                <%}else {%>
+                <input style="display: none" name="back_img"  value='<%= idle.back_img %>' id="inputbackgroudImg">
+                <div class="blog-editor-title">
+                    <input type="text" required id="title" value='<%= idle.title %>' name="title"
+                           placeholder="标题"/>
+                </div>
+                <div class="blog-editor-quote">
+                    <textarea id="quote" placeholder="简介" name="quote"><%= idle.quote %></textarea>
+                </div>
+                <div class="blog-editor-body">
+                    <textarea name="content" required id="textareacontent"><%= idle.content %></textarea>
+                </div>
+                <div class="fun_target">
+                    <label class="tag_label">标签:</label>
+                    <input class="tag_input" name='tag' id="idletagtxt"/>
+                </div>
+                <%}%>
+            </div>
+            <div class="fun_blog">
+                <div class="publish_bar" style="height: 35px">
+                    <div class="pull-left">
+                        <button type="submit" class="btn btn-primary">发表</button>
+                        <button type="button" class="btn btn-default">取消</button>
+                    </div>
+                    <div class="pull-right">
+                        <button type="button" class="btn btn-default" data-type="idle" onclick="changeMd2Html(this)">预览</button>
+                        <button type="button" class="btn btn-default">保存草稿</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="background each-idle" id="divpreidle" style="display:none">
+    <!--标题和简介-->
+    <div class="idle-touming">
+        <div class="idle-wrapper">
+            <div class="getback">
+                <a onclick="showIdle(false)" placeholder="返回日志"><i class="fa fa-angle-left"></i></a>
+            </div>
+            <h1 id="pretitle" class="idle-title"></h1>
+            <div class="quote-warpper">
+                <div class="quote"><p id="prequote"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="idle-content container">
+        <div class="content" id="precontent">
+            <%=idle.content%>
+        </div>
+
+    </div>
+</div>
+<% include ../footer.html %>
+<script src="components/markdown-js/dist/markdown.js"></script>
+<script type="text/javascript" src="../../scripts/blog/blogoperation.js"></script>

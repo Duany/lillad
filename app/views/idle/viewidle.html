@@ -1,0 +1,27 @@
+<% include ../header.html %>
+<div class="background each-idle">
+    <!--标题和简介-->
+    <div class="idle-touming">
+        <div class="idle-wrapper">
+            <div class="getback">
+                <a href="/"><i class="fa fa-angle-left"></i></a>
+            </div>
+            <h1 class="idle-title"><%=idle.title%></h1>
+            <div class="quote-warpper">
+                <div class="quote"><p><%= idle.quote %></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="idle-content container">
+        <div class="content">
+            <%=idle.html_content%>
+        </div>
+    </div>
+</div>
+<% include ../footer.html %>
+<script src="../../scripts/blog/index.js"></script>
+<script>
+    var bgurl = '<%=idle.back_img%>';
+    $('.background').css("background-image",'url('+bgurl+')');
+</script>

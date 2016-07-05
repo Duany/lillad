@@ -1,0 +1,22 @@
+<% include ../header.html %>
+<div class="container">
+    <div class="idlelist" >
+   		<% if (idles.length) { %>  
+			<% idles.forEach(function(idle){ %>
+				<div class="blogdetail">
+					<h3 class="title">
+						<a href='./idle/<%= idle._id %>' target="_blank" class="idle-title"><%= idle.title %></a>
+					</h3>
+					<div class="content">
+						<%= idle.html_content%>
+					</div>
+				</div>
+			<%})%>
+		<%} else{%>
+		<div>
+			暂无日志信息！
+		</div>
+		<%}%>
+    </div>
+</div>
+<% include ../footer.html %>

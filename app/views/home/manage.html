@@ -1,0 +1,99 @@
+<% include ../header.html %>
+<div class="container manage-list">
+    <div class="my-tab">
+        <ul id="myTab" class="nav nav-tabs ">
+            <li class="active">
+                <a href="#blog" data-toggle="tab">Blog</a>
+            </li>
+            <li><a href="#idle" data-toggle="tab">Small Talk</a></li>
+        </ul>
+    </div>
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade in active" id="blog">
+            <div class="manage-head">
+                <div class="manage-add">
+                    <a href="/blog/add"><i class="fa fa-pencil-square-o"></i><span>New Blog</span></a>
+                </div>
+            </div>
+            <div class="manage-body">
+
+
+                <ul >
+                    <% if (blogs.length) { %>
+                    <% blogs.forEach(function(blog){ %>
+                    <li>
+                        <div class="list-title">
+                            <a href='./blog/edit/<%= blog._id %>' title="<%= blog.title %>" class="blog-title"><%= blog.title %></a>
+                        </div>
+                        <div class="list-other">
+                            <div class="time"><span><%= blog.time.day %> <%= blog.time.minute %></span></div>
+                            <div class="btn-group">
+                                    <a type="button" href='./blog/edit/<%= blog._id %>' title="编辑" class="btn btn-xs btn-default"><i
+                                            class="fa fa-pencil"></i></a>
+                                    <button type="button" data-id='<%= blog._id %>' data-cmd="blog" title="删除" class="btn btn-xs btn-default" onclick="deleteInfo(this)"><i class="fa fa-trash"></i></button>
+                                    <%if(blog.istop ==='N' || !blog.istop ){%>
+                                    <button type="button" data-id='<%= blog._id %>' data-istop="Y" data-url="/settopblog" title="置顶"
+                                            class="btn btn-xs btn-default"  onclick="setToTop(this)"><i class="fa fa-arrow-up"></i>
+                                    </button>
+
+                                    <%} else {%>
+                                    <button type="button" data-id='<%= blog._id %>' data-istop="N" data-url="/settopblog" title="取消置顶"
+                                            class="btn btn-xs btn-default"  onclick="setToTop(this)"><i class="fa fa-arrow-down"></i>
+                                    </button>
+
+                                    <%}%>
+                                </div>
+                        </div>
+
+                    </li>
+                    <% }) %>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="idle">
+            <div class="manage-head">
+                <div class="manage-add">
+                    <a href="/idle/add"><i class="fa fa-pencil-square-o"></i><span>New Small Talk</span></a>
+                </div>
+            </div>
+            <div class="manage-body">
+                <ul >
+
+                    <% if (idles.length) { %>
+                    <% idles.forEach(function(idle){ %>
+                    <li>
+                        <div  class="list-title">
+                            <a href='./idle/edit/<%= idle._id %>' title='<%= idle.title %>' class="idle-title"><%= idle.title %></a>
+                        </div>
+                        <div class="list-other">
+                            <div class="time"><span><%= idle.time.day %> <%= idle.time.minute %></span></div>
+                            <div class="btn-group">
+                                <a type="button" href='./idle/edit/<%= idle._id %>' title="编辑" class="btn btn-xs btn-default"><i
+                                        class="fa fa-pencil"></i></a>
+                                <button type="button" data-id='<%= idle._id %>' data-cmd="idle" title="删除"
+                                        class="btn btn-xs btn-default" onclick="deleteInfo(this)"><i class="fa fa-trash"></i></button>
+                                <%if(idle.istop ==='N' || !idle.istop ){%>
+                                <button type="button" data-id='<%= idle._id %>' data-istop="Y"  data-url="/settopidle" title="置顶"
+                                        class="btn btn-xs btn-default gettopidle" onclick="setToTop(this)" ><i class="fa fa-arrow-up"></i>
+                                </button>
+                                <%} else {%>
+                                <button type="button" data-id='<%= idle._id %>' data-istop="N" data-url="/settopidle" title="取消置顶"
+                                        class="btn btn-xs btn-default gettopidle" onclick="setToTop(this)"><i class="fa fa-arrow-down"></i>
+                                </button>
+                                <%}%>
+                            </div>
+                        </div>
+
+                    </li>
+                    <% }) %>
+                    <% } %>
+                    </tbody>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+<% include ../footer.html %>
+<script type="text/javascript" src="../../scripts/blog/blogoperation.js"></script>

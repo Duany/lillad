@@ -1,0 +1,32 @@
+<% include ../header.html %>
+<div class="container all-box">
+    <% if (views.length) { %>
+    <% views.forEach(function(view){ %>
+    <div class="row">
+        <div class="col-md-2">
+            <h2 class="pull-left"><%=view._id%></h2>
+            <h2 class="pull-right"><%=view.count%> Page</h2>
+        </div>
+
+        <div class="col-md-10">
+            <% view.blogs.forEach(function(blog){ %>
+            <div class="box-detail">
+                <a href='./blog/<%= blog._id %>' target="_blank">
+                    <h2 class="title"><%= blog.title %></h2>
+                    <div class="content"><%= blog.html_content%>
+                    </div>
+                    <div class="box-other"><%= blog.time.day%></div>
+                </a>
+            </div>
+            <%})%>
+        </div>
+
+    </div>
+    <%})%>
+    <%} else{%>
+    <div>
+        暂无日志信息！
+    </div>
+    <%}%>
+</div>
+<% include ../footer.html %>

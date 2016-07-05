@@ -1,0 +1,64 @@
+.mynav {
+  background-color: rgba(255, 255, 255, 0.90);
+  border-bottom: 1px groove rgba(0, 0, 0, 0.1);
+  //border-bottom:none;
+  li > a {
+    color: rgba(0, 0, 0, 0.7);
+    &:hover {
+      color: rgba(0, 0, 0, 0.4);
+    }
+  }
+}
+
+.mynav .navbar-brand {
+  color: #2a6496 !important;
+  font-weight: normal;
+}
+
+.mynav .navbar-brand:hover {
+  color: #357fbe !important;
+}
+
+.mynav .navbar-brand img {
+  height: 20px;
+}
+
+body {
+  font-family: "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1";
+}
+
+body > .container {
+  padding: 60px 15px 0;
+}
+a {
+  cursor: pointer;
+  &:hover,&:focus,&:visited {
+    text-decoration: none;
+  }
+}
+.footer {
+  padding-top: 50px;
+  width: 100%;
+  .container-fluid:last-child {
+    text-align: center;
+    .container .row {
+      display: inline-block;
+      padding-left: 10px;
+      color: rgba(0, 0, 0, 0.4);
+      a {
+        color: lighten(#6495ed, 15%);
+        &:hover {
+          color: #6495ed;
+        }
+      }
+    }
+  }
+}
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.form-wrapper{
+  margin-top: 80px;
+}
