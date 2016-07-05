@@ -1,0 +1,123 @@
+.manage-list {
+  max-width: 900px;
+}
+.manage-list .tab-content {
+  margin: 0 20px;
+}
+.manage-list .tab-content .manage-head {
+  padding-top: 10px;
+  padding-bottom: 12px;
+}
+.manage-list .tab-content .manage-head .manage-add {
+  position: relative;
+  margin-right: 10px;
+}
+.manage-list .tab-content .manage-head .manage-add > a {
+  display: inline-block;
+  padding: 0 15px 0 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 32px;
+  line-height: 32px;
+  color: #FFFFFF;
+  border: 1px solid #6D7C8C;
+  background-color: #7B8C9E;
+}
+.manage-list .tab-content .manage-head .manage-add i {
+  font-size: 16px;
+  padding-right: 5px;
+}
+.manage-list .tab-content .manage-head .manage-add span {
+  font-size: 14px;
+}
+.manage-list .tab-content .manage-body {
+  border-top: 1px solid #DADADA;
+  border-bottom: 1px solid #DADADA;
+  padding: 3px 0 10px;
+}
+.manage-list .tab-content .manage-body ul {
+  padding-left: 0;
+}
+.manage-list .tab-content .manage-body li {
+  height: 30px;
+  padding: 6px 0;
+  outline: none;
+  list-style: none;
+}
+.manage-list .tab-content .manage-body .list-title {
+  width: 50%;
+  font-size: 14px;
+  font-weight: normal;
+  float: left;
+}
+.manage-list .tab-content .manage-body .list-title a {
+  max-width: 380px;
+  padding-right: 4px;
+  white-space: nowrap;
+  word-wrap: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: text-bottom;
+}
+.manage-list .tab-content .manage-body .list-other {
+  float: right;
+}
+.manage-list .tab-content .manage-body .list-other .time {
+  float: left;
+  padding-right: 10px;
+}
+.manage-list .tab-content .manage-body .list-other .time > span {
+  color: #9B9B9B;
+  line-height: 1.6;
+}
+.manage-list .tab-content .manage-body .bg {
+  background-color: #FCFCFC;
+}
+.my-tab {
+  margin: 0 20px;
+  border-bottom: 2px solid #DDDDDD;
+}
+.my-tab ul {
+  margin-left: -20px;
+  border-bottom: 0;
+}
+.my-tab ul > li {
+  float: left;
+  outline: none;
+  list-style: none;
+  font-size: 14px;
+  margin: 0 10px;
+  position: relative;
+  opacity: .8;
+  transition: opacity .3s;
+}
+.my-tab ul > li > a {
+  margin: 0 10px -2px;
+  padding: 10px 0 9px;
+  cursor: pointer;
+  background-color: transparent;
+}
+.my-tab ul > li.disabled > a:hover,
+.my-tab ul > li.disabled > a:focus {
+  text-decoration: none;
+  background-color: transparent;
+}
+.my-tab ul > li.active {
+  font-weight: bold;
+}
+.my-tab ul > li.active > a,
+.my-tab ul > li.active > a:hover {
+  cursor: pointer;
+  color: #26709A;
+  border-width: 0 0 3px;
+  border-bottom-style: solid;
+  border-bottom-color: #26709A;
+}
+.my-tab ul > li.active > a:focus {
+  color: #26709A;
+  opacity: 1;
+  border-width: 0 0 3px;
+  border-bottom-style: solid;
+  border-bottom-color: #26709A;
+}

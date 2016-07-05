@@ -1,0 +1,132 @@
+.manage-list {
+  max-width: 900px;
+  .tab-content{
+    margin: 0 20px;
+    .manage-head{
+      padding-top: 10px;
+      padding-bottom: 12px;
+      .manage-add{
+        position: relative;
+        margin-right: 10px;
+        > a{
+          display: inline-block;
+          padding: 0 15px 0 15px;
+          text-decoration: none;
+          border-radius: 5px;
+          cursor: pointer;
+          height: 32px;
+          line-height: 32px;
+          color: #FFFFFF;
+          border: 1px solid #6D7C8C;
+          background-color: #7B8C9E;
+        }
+        i {
+          font-size: 16px;
+          padding-right: 5px;
+        }
+        span {
+          font-size: 14px;
+        }
+      }
+    }
+    .manage-body{
+      border-top: 1px solid #DADADA;
+      border-bottom: 1px solid #DADADA;
+      padding: 3px 0 10px;
+      ul {
+        padding-left: 0;
+      }
+      li{
+        height: 30px;
+        padding: 6px 0;
+        outline: none;
+        list-style: none;
+      }
+      .list-title{
+        width: 50%;
+        font-size: 14px;
+        font-weight: normal;
+        float: left;
+        a{
+          max-width: 380px;
+          padding-right: 4px;
+          white-space: nowrap;
+          word-wrap: normal;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          vertical-align: text-bottom;
+        }
+      }
+      .list-other{
+        float: right;
+        .time{
+          float: left;
+          padding-right: 10px;
+          >span{
+            color: #9B9B9B;
+            line-height: 1.6;
+          }
+        }
+        .btn-group{
+
+        }
+      }
+      .bg{
+        background-color: #FCFCFC;
+      }
+    }
+  }
+}
+
+.my-tab {
+  margin: 0 20px;
+  border-bottom: 2px solid #DDDDDD;
+  ul {
+    margin-left: -20px;
+    border-bottom: 0;
+    > li {
+      float: left;
+      outline: none;
+      list-style: none;
+      font-size: 14px;
+      margin: 0 10px;
+      position: relative;
+      opacity: .8;
+      transition: opacity .3s;
+      > a {
+        margin: 0 10px -2px;
+        padding: 10px 0 9px;
+        cursor: pointer;
+        background-color: transparent;
+      }
+      &.disabled > a {
+        &:hover,
+        &:focus {
+          text-decoration: none;
+          background-color: transparent;
+        }
+      }
+      &.active {
+        font-weight: bold;
+        > a {
+          &,
+          &:hover {
+            cursor: pointer;
+            color: #26709A;
+            border-width: 0 0 3px;
+            border-bottom-style: solid;
+            border-bottom-color: #26709A;
+          }
+          &:focus {
+            color: #26709A;
+            opacity: 1;
+            border-width: 0 0 3px;
+            border-bottom-style: solid;
+            border-bottom-color: #26709A;
+          }
+        }
+      }
+    }
+
+  }
+}

@@ -1,0 +1,31 @@
+<% include ../header.html %>
+<div class="container all-box">
+    <% if (idles.length) { %>
+    <% idles.forEach(function(idle){ %>
+    <div class="row">
+        <div class="col-md-2">
+            <h2 class="pull-left"><%=idle._id%></h2>
+            <h2 class="pull-right"><%=idle.count%> Page</h2>
+        </div>
+        <div class="col-md-10">
+            <% idle.idles.forEach(function(idle){ %>
+            <div class="box-detail">
+                <a href='./idle/<%= idle._id %>' target="_blank">
+                    <div class="imgwrap">
+                        <img src="<%=idle.back_img %>">
+                    </div>
+                    <h2 class="title-img"><%=idle.title %></h2>
+                    <div class="box-other"><%= idle.time.day%></div>
+                </a>
+            </div>
+            <%})%>
+        </div>
+    </div>
+    <%})%>
+    <%} else{%>
+    <div>
+        暂无日志信息！
+    </div>
+    <%}%>
+</div>
+<% include ../footer.html %>

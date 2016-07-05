@@ -1,0 +1,68 @@
+<% include header.html %>
+
+<div class="background">
+    <div class="idle-touming">
+        <div class="idle-wrapper">
+            <div class="logo">
+            </div>
+            <div class="idle-index-content">
+                <%if(idles.length){%>
+                <script>
+                    var bgurl = '<%=idles[0].back_img%>';
+                    $('.background').css("background-image",'url('+bgurl+')');
+                </script>
+                <div class="content">
+                    <h1 class="idle-title"><%=idles[0].title%></h1>
+                    <div class="quote-warpper">
+                        <div class="quote"><p><%=idles[0].quote%></p>
+                        </div>
+                    </div>
+                </div>
+                <a href="/idle/<%=idles[0]._id%>" class="index-down-icon">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>
+<%if(idles.length){%>
+<div class="idle-cover">
+
+    <% idles.forEach(function(idle){ %>
+    <div class="idle-title">
+        <h2><a href='./idle/<%= idle._id %>' target="_blank" class="title"><%= idle.title %></a>
+        </h2>
+    </div>
+    <div class="idle-content">
+        <%= idle.html_content%>
+    </div>
+
+    <% }) %>
+</div>
+<%}%>
+<%if(blogs.length){%>
+<div class="blog-index">
+    <div class="brand">
+        <h2><a href="./blog">Blog</a></h2>
+    </div>
+    <% blogs.forEach(function(blog){ %>
+    <div class="content">
+        <div class="blog-title"><a href='./blog/<%= blog._id %>' target="_blank">
+            <h2><%= blog.title %></h2></a>
+        </div>
+        <div class="blog-index-content">
+            <div class="blog-img">
+
+            </div>
+            <div class="blog-content">
+                <%= blog.html_content%>
+            </div>
+        </div>
+    </div>
+    <% }) %>
+</div>
+<%}%>
+
+<% include footer.html %>
+<script src="../scripts/blog/index.js"></script>

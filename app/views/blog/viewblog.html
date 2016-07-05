@@ -1,0 +1,34 @@
+<% include ../header.html %>
+<div class="container each-blog">
+    <!--pre view-->
+    <div class="row blog-wrapper">
+        <div class="select-blog">
+            <div class="blog-head">
+                <h1><%=blog.title%></h1>
+                <%if(blog.time){%>
+                <div class="row time">
+                    <span><%=blog.time.day%> <%=blog.time.minute%></span>
+                </div>
+                <%}%>
+            </div>
+
+            <div class="blog-content">
+                <%=blog.content%>
+            </div>
+        </div>
+        <div class="blog-footer">
+            <div class="row tags">
+                <%if(blog.tags){%>
+                <% blog.tags.forEach(function(tag){ %>
+                <a href="tag/<%=tag.tag%>" target="_blank" class="pull-right" title="<%=tag.tag%>">
+                    <i class="fa fa-tags"></i>
+                </a>
+                <%})%>
+                <%}%>
+            </div>
+        </div>
+    </div>
+</div>
+<% include ../footer.html %>
+
+<script src="components/markdown-js/dist/markdown.js"></script>

@@ -1,0 +1,105 @@
+<% include ../header.html %>
+<div class="container blog-editor" id="diveditblog">
+    <div class="blog-border" id="contentdiv">
+        <!--标题头-->
+        <div class="blog-editor-head">
+            <div class="bg_mode_gb_title">
+                <% if(action === 'addblog'){%>
+                <h3><span>写日志</span></h3>
+                <%}else if(action === 'editblog'){%>
+                <h3><span>编辑日志</span></h3>
+                <%}%>
+            </div>
+            <div class="mode_gb_other pull-right">
+                <a href="/manage" target="_self">返回日志列表</a>
+            </div>
+        </div>
+        <div class="blog-editor-toolbar">
+            <!--<span tabindex="0"title="插入图片">-->
+            <!--<span class="vespan">插入图片</span>-->
+            <!--</span>-->
+            <form id="uploadImg" enctype="multipart/form-data" method="post">
+                <a href="javascript:;" class="file">选择文件
+                    <input type="file" data-type='Img' multiple="multiple"
+                           accept="image/jpeg,image/png,image/bmp,image/gif" onchange="uploadImg(this)"
+                           data-type="normal">
+                </a>
+            </form>
+            <form id="uploadBgImg" enctype="multipart/form-data" method="post">
+                <a href="javascript:;" class="a-upload">点击这里上传文件
+                    <input type="file" data-type='BgImg' accept="image/jpeg,image/x-png,image/png,image/pjpeg"
+                           onchange="uploadImg(this)" data-type="background">
+                </a>
+                <input style="display: none" id="inputbackgroudImg">
+            </form>
+            <!--<input type="file" name="image_file" id="image_file" onchange="fileSelected();"/>-->
+        </div>
+        <form class="blog-editor-form" method="post" autocomplete="off">
+
+            <div class="blog-editor-content">
+                <% if(action === 'addblog'){%>
+                <!--编辑区域-->
+                <div class="blog-editor-title">
+                    <input type="text" required id="title" name="title" placeholder="标题"/>
+                </div>
+                <div class="blog-editor-body">
+                    <textarea name="content" id="textareacontent"></textarea>
+                </div>
+                <div class="fun_target">
+                    <label class="tag_label">标签:</label>
+                    <input class="tag_input" name='tag' id="blogtagtxt"/>
+                </div>
+                <%}else if(action === 'editblog'){%>
+                <div class="blog-editor-title">
+                    <input type="text" required id="title" value='<%= blog.title %>' name="title" placeholder="标题"/>
+                </div>
+                <div class="blog-editor-body">
+                    <textarea name="content" id="textareacontent"><%= blog.content %></textarea>
+                </div>
+                <div class="fun_target">
+                    <label class="tag_label">标签:</label>
+                    <input class="tag_input" name='tag' id="blogtagtxt" value=''/>
+                </div>
+                <%}%>
+            </div>
+            <div class="fun_blog">
+
+                <div class="publish_bar" style="height: 35px">
+                    <div class="pull-left">
+                        <button type="submit" class="btn btn-primary">发表</button>
+                        <button type="button" data-url="cancel" onclick="cancelsave(this)" class="btn btn-default">取消
+                        </button>
+                    </div>
+                    <div class="pull-right">
+                        <button type="button" class="btn btn-default" data-type="blog" onclick="changeMd2Html(this)">
+                            预览
+                        </button>
+                        <button type="button" class="btn btn-default">保存草稿</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="container each-blog" id="divpreblog" style="display:none">
+    <!--pre view-->
+    <div class="row blog-wrapper">
+        <div class="tool-bar">
+            <a onclick="showBlog(false)">返回日志</a>
+        </div>
+        <div class="select-blog">
+            <div class="blog-head">
+                <h1 id="preblogtitle"></h1>
+            </div>
+            <div class="blog-content" id="preblogcontent">
+            </div>
+        </div>
+        <div class="blog-footer">
+            <div class="row tags">
+            </div>
+        </div>
+    </div>
+</div>
+<% include ../footer.html %>
+<script src="components/markdown-js/dist/markdown.js"></script>
+<script type="text/javascript" src="../../scripts/blog/blogoperation.js"></script>

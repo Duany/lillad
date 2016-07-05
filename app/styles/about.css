@@ -1,0 +1,16 @@
+.about {
+  padding: 10px;
+  margin-top: 70px;
+  text-align: center;
+}
+.about .about-content .quote {
+  padding: 20px 0;
+}
+.about .about-content .quote i {
+  font-size: 20px;
+  padding: 5px;
+}
+.about .about-content .contact ul li {
+  display: block;
+  padding-top: 5px;
+}
