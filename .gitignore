@@ -30,7 +30,7 @@ build/Release
 node_modules
 jspm_packages
 app/components
-
+app/upload
 # Optional npm cache directory
 .npm
 .idea
