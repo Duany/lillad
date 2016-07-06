@@ -18,6 +18,8 @@
     "express-session":"~1.13.0",
     "connect-flash":"*",
     "express-favicon":"*",
-    "markdown":"*"
+    "markdown":"*",
+    "moment":"*",
+    "bower":"*"
   }
 }
