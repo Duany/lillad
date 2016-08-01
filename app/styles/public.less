@@ -1,3 +1,20 @@
+body {
+  font-family: "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1";
+}
+
+body > .container {
+  padding: 60px 15px 0;
+}
+
+a {
+  color: rgba(0, 0, 0, 1);
+  cursor: pointer;
+  &:hover, &:focus, &:visited {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 1);
+  }
+}
+
 .mynav {
   background-color: rgba(255, 255, 255, 0.90);
   border-bottom: 1px groove rgba(0, 0, 0, 0.1);
@@ -23,42 +40,78 @@
   height: 20px;
 }
 
-body {
-  font-family: "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1";
-}
-
-body > .container {
-  padding: 60px 15px 0;
-}
-a {
-  cursor: pointer;
-  &:hover,&:focus,&:visited {
-    text-decoration: none;
-  }
-}
 .footer {
   padding-top: 50px;
   width: 100%;
-  .container-fluid:last-child {
+  text-align: center;
+  .container {
+    display: inline-block;
+    padding-left: 10px;
+    color: rgba(0, 0, 0, 0.6);
+    a {
+      color: lighten(#6495ed, 10%);
+      &:hover {
+        color: #6495ed;
+      }
+    }
+
+  }
+}
+
+.form-wrapper {
+  margin-top: 80px;
+}
+
+/* left nav bar style*/
+.navbar-lillad {
+  position: fixed;
+  width: 45px;
+  i {
+    width: 16px;
+    display: inline-block;
     text-align: center;
-    .container .row {
-      display: inline-block;
-      padding-left: 10px;
-      color: rgba(0, 0, 0, 0.4);
-      a {
-        color: lighten(#6495ed, 15%);
-        &:hover {
-          color: #6495ed;
-        }
+    line-height: 14px;
+  }
+  .navbar-user {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: 5px;
+  }
+}
+
+.expanded {
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: #2a2a2a;
+  .dropdown{
+    .active {
+      background-color: #e78170;
+      color: white;
+      text-shadow: 0 1px 0 #de533a;
+    }
+    .logo {
+      font-size: 18px;
+      color: white;
+      i {
+        display: none;
       }
     }
   }
-}
-.footer > .container {
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
-.form-wrapper{
-  margin-top: 80px;
+  a {
+    display: block;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 25px;
+    text-align: center;
+    color: #999999;
+    text-shadow: 0 1px 0 black;
+    &:hover {
+      background-color: #f49484;
+    }
+  }
+  span {
+    display: none;
+  }
 }

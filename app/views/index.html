@@ -26,30 +26,30 @@
         </div>
     </div>
 </div>
-<%if(idles.length){%>
-<div class="idle-cover">
+<!--<%if(idles.length){%>-->
+<!--<div class="idle-cover">-->
 
-    <% idles.forEach(function(idle){ %>
-    <div class="idle-title">
-        <h2><a href='./idle/<%= idle._id %>' target="_blank" class="title"><%= idle.title %></a>
-        </h2>
-    </div>
-    <div class="idle-content">
-        <%= idle.html_content%>
-    </div>
+    <!--<% idles.forEach(function(idle){ %>-->
+    <!--<div class="idle-title">-->
+        <!--<h3><a href='./idle/<%= idle._id %>' target="_blank" class="title"><%= idle.title %></a>-->
+        <!--</h3>-->
+    <!--</div>-->
+    <!--<div class="idle-content">-->
+        <!--<%= idle.html_content%>-->
+    <!--</div>-->
 
-    <% }) %>
-</div>
-<%}%>
+    <!--<% }) %>-->
+<!--</div>-->
+<!--<%}%>-->
 <%if(blogs.length){%>
 <div class="blog-index">
     <div class="brand">
-        <h2><a href="./blog">Blog</a></h2>
+        <h3><a href="./blog">Blog</a></h3>
     </div>
     <% blogs.forEach(function(blog){ %>
     <div class="content">
-        <div class="blog-title"><a href='./blog/<%= blog._id %>' target="_blank">
-            <h2><%= blog.title %></h2></a>
+        <div class="index-title"><a href='./blog/<%= blog._id %>' target="_blank">
+            <h3><%= blog.title %></h3></a>
         </div>
         <div class="blog-index-content">
             <div class="blog-img">

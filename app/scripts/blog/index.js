@@ -22,6 +22,7 @@
             idle();
         });
     });
+    $('[data-toggle="tooltip"]').tooltip();
 
     //设置滚动高度显示菜单栏
     window.onscroll = function () {

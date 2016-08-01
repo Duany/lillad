@@ -22,7 +22,7 @@ router.get('/', function (req, res) {
                 console.log(err);
                 idles = [];
             }
-            return res.render('index', {
+            return res.render('index_left', {
                 blogs: blogs,
                 idles: idles,
                 user: req.session.user

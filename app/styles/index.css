@@ -67,13 +67,13 @@
   background-color: rgba(255, 255, 255, 0);
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
-.idle-cover .idle-title h2 {
+.idle-cover .idle-title h3 {
   display: block;
   max-width: 900px;
   margin: 0 auto;
-  font-size: 40px;
-  height: 120px;
-  line-height: 120px;
+  font-size: 25px;
+  height: 80px;
+  line-height: 80px;
   color: rgba(255, 255, 255, 0);
 }
 .idle-cover .idle-content {
@@ -96,18 +96,18 @@
   background-color: #ffffff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
-.blog-index .brand h2 {
+.blog-index .brand h3 {
   display: block;
-  max-width: 900px;
   margin: 0px auto;
-  font-size: 40px;
-  line-height: 120px;
+  font-size: 24px;
+  line-height: 80px;
   color: #6495ed;
 }
 .blog-index .content {
   display: block;
   max-width: 960px;
   margin: 0 auto;
+  border-bottom: 1px dashed #d9d9d9;
 }
 .blog-index .content .blog-index-content {
   width: 100% !important;
@@ -121,4 +121,13 @@
 }
 .blog-index .content .blog-index-content .blog-content {
   padding: 0px;
+}
+.index-title {
+  margin-top: 0;
+  margin-bottom: 10px;
+  margin-left: 0;
+  display: inherit;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.5;
 }
