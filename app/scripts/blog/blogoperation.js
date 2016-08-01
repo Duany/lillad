@@ -212,9 +212,9 @@ function showNextPage(obj) {
 
         var div = $("<div class='blog-detail'></div>");
         var h3 = $("<h3></h3>");
-        h3.html(blog.title.toString());
         var a = $("<a target='_blank' class='blog-title'></a>");
         a.attr("href", './blog/' + blog._id.toString());
+        a.html(blog.title.toString());
         h3.append(a);
         var contDiv = $("<div class='blog-content'></div>");
         contDiv.html(blog.content.toString());

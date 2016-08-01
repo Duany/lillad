@@ -2,8 +2,10 @@
   margin-top: 0;
   background-color: #70B8C4;
   background-size: cover;
-  background-repeat: no-repeat;
   width: 100%;
+  height: 100%;
+  background-position-x: center;
+  background-position-y: center;
 }
 
 .idle-touming {
@@ -20,7 +22,7 @@
   }
   a {
     color: rgba(255, 255, 255, 0.3);
-    i{
+    i {
       font-size: 4em;
     }
   }
@@ -71,13 +73,13 @@
   .idle-title {
     background-color: rgba(255, 255, 255, 0);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    h2 {
+    h3 {
       display: block;
       max-width: 900px;
       margin: 0 auto;
-      font-size: 40px;
-      height: 120px;
-      line-height: 120px;
+      font-size: 25px;
+      height: 80px;
+      line-height: 80px;
       color: rgba(255, 255, 255, 0);
     }
   }
@@ -101,12 +103,11 @@
     line-height: 120px;
     background-color: #ffffff;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    h2 {
+    h3 {
       display: block;
-      max-width: 900px;
       margin: 0px auto;
-      font-size: 40px;
-      line-height: 120px;
+      font-size: 24px;
+      line-height: 80px;
       color: #6495ed;
     }
   }
@@ -114,18 +115,159 @@
     display: block;
     max-width: 960px;
     margin: 0 auto;
+    border-bottom: 1px dashed #d9d9d9;
     .blog-index-content {
       width: 100% !important;
       padding: 20px;
-      .blog-img{
+      .blog-img {
         width: 100%;
         img {
           width: 100%;
         }
       }
-      .blog-content{
+      .blog-content {
         padding: 0px;
       }
     }
   }
 }
+
+//index css
+.index-title {
+  margin-top: 0;
+  margin-bottom: 10px;
+  margin-left: 0;
+  display: inherit;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+/*left panel*/
+.row-fluid {
+  width: 100%;
+  & [class*="span"]:first-child {
+    margin-left: 0;
+  }
+  & [class*="span"] {
+    display: block;
+    width: 100%;
+    min-height: 30px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    margin-left: 0%;
+  }
+  .span3 {
+    width: 25.0%;
+  }
+  .span7 {
+    padding-left: 12px;
+    width: 58.33333%;
+    max-width: 1000px;
+  }
+  .offset3 {
+    margin-left: 25.0%;
+  }
+  .thumbnails {
+    padding-left: 36px;
+    margin: 35px 0 0;
+  }
+  .page-title {
+    padding-left: 20px;
+    border-bottom: 2px solid #d9d9d9;
+    font-size: 12px;
+  }
+  &:before, &:after {
+    display: table;
+    content: "";
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.left-aside {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 45px;
+  .img-wrapper {
+    color: rgba(255, 255, 255, 0.9);
+    position: absolute;
+    bottom: 0;
+    padding: 30px;
+    a {
+      color: rgba(255, 255, 255, 0.3);
+      i {
+        font-size: 4em;
+      }
+    }
+    h1 {
+      margin-top: 20px;
+    }
+    .quote-warpper {
+      font-size: 13px;
+      margin: 50px auto;
+      padding-left: 50px;
+    }
+    .index-icon {
+      float: right;
+    }
+  }
+
+}
+
+.article-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  .article {
+    position: relative;
+    width: 100%;
+    padding-right: 2px;
+    padding-bottom: 17px;
+    margin: 0 0 17px;
+    border-bottom: 1px dashed #d9d9d9;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    .wrap-img {
+      float: right;
+      width: 100px;
+      height: 100px;
+    }
+    .list-top {
+      margin: 8px 0;
+      font-size: 12px;
+    }
+    .title {
+      margin-top: 0;
+      margin-bottom: 10px;
+      margin-left: 0;
+      display: inherit;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 1.5;
+      a {
+        color: rgba(0,0,0,0.6);
+        &:hover{
+          color: rgba(0,0,0,1);
+        }
+      }
+    }
+    .list-footer {
+      font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+      font-size: 12px;
+      font-weight: normal;
+      line-height: 20px;
+    }
+  }
+  .have-img>div {
+    padding-right: 110px;
+  }
+
+}
+

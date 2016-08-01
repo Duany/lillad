@@ -1,0 +1,79 @@
+<% include header_left.html %>
+<div class="row-fluid">
+    <div>
+        <!--left-->
+        <div class="span3 left-aside">
+            <div class="background">
+                <div class="img-wrapper">
+                    <div class="logo">
+                    </div>
+                    <div class="img-content">
+                        <%if(idles.length){%>
+                        <script>
+                            var bgurl = '<%=idles[0].back_img%>';
+                            $('.background').css("background-image", 'url(' + bgurl + ')');
+                        </script>
+                        <h1><%=idles[0].title%></h1>
+                        <div class="quote-warpper">
+                            <div class="quote"><p><%=idles[0].quote%></p>
+                            </div>
+                        </div>
+                        <a href="/idle/<%=idles[0]._id%>" class="index-icon">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="span7 offset3">
+            <div class="page-title">
+                <h4>&nbsp;</h4>
+            </div>
+            <div class="list-container">
+                <div class="article-list thumbnails">
+                    <%if(blogs.length){%>
+                    <% blogs.forEach(function(blog){ %>
+                    <div
+                    <%if(blog.imgs){%> class="article have-img"<%}else{%> class="article "<%}%>
+                    >
+                    <%if(blog.imgs){%>
+                    <a class="wrap-img">
+                        <img src='<%=blog.imgs[0]%>'>
+                    </a>
+                    <%}%>
+                    <div>
+                        <div class="list-top">
+                            <span class="time" data-shared-at="2016-08-10T12:37:16+08:00">2天之前</span>
+
+                        </div>
+                        <h4 class="title">
+                            <a href='./blog/<%= blog._id %>' target="_blank"><%= blog.title %></a>
+                        </h4>
+                        <div class="list-footer">
+                            <a target="_blank" href="">
+                                阅读 2993
+                            </a>
+                            <a target="_blank" href="">
+                                · 评论 93
+                            </a>
+                            <span> · 喜欢 103</span>
+                            <span> · 打赏 1</span>
+
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+                <%}%>
+            </div>
+        </div>
+
+    </div>
+    <!--right-->
+</div>
+
+</div>
+
+
+<% include footer.html %>
+<script src="../scripts/blog/index.js"></script>
