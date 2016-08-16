@@ -203,28 +203,36 @@ function showNextPage(obj) {
     }
     for (var i = 0; i < obj.blogs.length; i++) {
         var blog = obj.blogs[i];
-        //var html = "<div class=\"blog-each\"><h3><a href=\"/blog/" + data.blogs[i]._id.toString() + "\" class=\"blog-title\">" +
-        //    data.blogs[i].title.toString() +
-        //    "</a></h3><div class=\"blog-content\">" +
-        //    data.blogs[i].contentBegin.toString() +
-        //    "</div><div class=\"blog-content-footer\"><span>" +
-        //    data.blogs[i].time.day + "</span></div></div>";
+        var div = $("<div class='article'></div>");
+        if (blog.imgs) {
+            div.addClass('have-img');
+            var img = $("<a class='wrap-img'> <img src='"+ blog.imgs[0]+"'></a>");
+            div.append(img);
+        }
+        var conDiv = $("<div></div>");
 
-        var div = $("<div class='blog-detail'></div>");
-        var h3 = $("<h3></h3>");
-        var a = $("<a target='_blank' class='blog-title'></a>");
+        var topDiv = $("<div class='list-top'>" +
+            "<time class='timeago' datetime='"+blog.createdate+"'></time></div>");
+        var h4 = $("<h4 class='title'></h4>");
+
+        var a = $("<a target='_blank' class='title'></a>");
         a.attr("href", './blog/' + blog._id.toString());
         a.html(blog.title.toString());
-        h3.append(a);
-        var contDiv = $("<div class='blog-content'></div>");
-        contDiv.html(blog.content.toString());
-        var footDiv = $("<div class='blog-content-footer'></div>");
-        var spanTime = $("<span></span>");
-        spanTime.html(blog.time.day);
-        footDiv.append(spanTime);
-        var tara = $("<a target='_blank' class='pull-right'><i class='fa fa-tags'></i></a>");
-        footDiv.append(tara);
-        $("#divbloglist").append(div.append(h3).append(contDiv).append(footDiv)).fadeIn();
+        h4.append(a);
+
+        var footDiv = $("<div class='list-footer'>" +
+        "<a target='_blank' href=''>阅读 2993</a>" +
+        "<a target='_blank href=''>· 评论 93</a><span> · 喜欢 103</span><span> · 打赏 1</span>");
+
+        if (blog.tags.length>0) {
+            var tara = $("<a  target='_blank' class='pull-right'><i class='fa fa-tags'></i></a>");
+            tara.attr('href',blog.tags[0].tag);
+            tara.attr('title',blog.tags[0].tag);
+            footDiv.append(tara);
+        }
+        conDiv.append(topDiv).append(h4).append(footDiv);
+        $("#divbloglist").append(div.append(conDiv)).fadeIn();
     }
+    $(".timeago").timeago();
 
 }

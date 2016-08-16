@@ -44,15 +44,15 @@
                     <%}%>
                     <div>
                         <div class="list-top">
-                            <span class="time" data-shared-at="2016-08-10T12:37:16+08:00">2天之前</span>
-
+                            <!--<span class="time" data-shared-at="2016-08-10T12:37:16+08:00">2天之前</span>-->
+                            <time class="timeago" datetime='<%=blog.createdate%>'></time>
                         </div>
                         <h4 class="title">
                             <a href='./blog/<%= blog._id %>' target="_blank"><%= blog.title %></a>
                         </h4>
                         <div class="list-footer">
                             <a target="_blank" href="">
-                                阅读 2993
+                                阅读 <%= blog.pv %>
                             </a>
                             <a target="_blank" href="">
                                 · 评论 93

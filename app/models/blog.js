@@ -30,7 +30,7 @@ Blog.save = function save(blog, callback) {
             }
             //change the format of date
             var date = new Date();
-            blog.createdate = moment(date).format("YYYY-MM-DD HH:mm:ss");
+            blog.createdate = date;
             blog.html_content = markdown.toHTML(blog.content);
             blog.time = {
                 year: moment(date).format("YYYY"),
@@ -93,7 +93,7 @@ Blog.updateBlog = function updateBlog(blog, callback) {
                 $set: {
                     'title': blog.title,
                     'content': blog.content,
-                    'editdate': moment(date).format("YYYY-MM-DD HH:mm:ss"),
+                    'editdate': date,
                     'tags': tags,
                     'html_content': blog.html_content
                 }
@@ -117,6 +117,13 @@ Blog.findById = function findById(id, callback) {
                 mongodb.close();
                 return callback(err);
             }
+            collection.update({
+                "_id": ObjectId(id)
+            }, {
+                $inc: {
+                    "pv": 1
+                }
+            });
             collection.findOne({
                 "_id": ObjectId(id)
             }, function (err, doc) {

@@ -100,6 +100,13 @@ Idle.findById = function findById(id, callback) {
 				mongodb.close();
 				return callback(err);
 			}
+			collection.update({
+				"_id": ObjectId(id)
+			}, {
+				$inc: {
+					"pv": 1
+				}
+			});
 			collection.findOne({
 				"_id": ObjectId(id)
 			}, function(err, doc) {

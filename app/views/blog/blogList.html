@@ -1,41 +1,65 @@
 <% include ../header.html %>
-<div class="container all-blog" id="divbloglist">
-    <% if (blogs.length) { %>
-    <% blogs.forEach(function(blog){ %>
-    <div class="blog-detail">
-        <h3>
-            <a href='./blog/<%= blog._id %>' target="_blank" class="blog-title"><%= blog.title %></a>
-        </h3>
-        <div class="blog-content">
-            <%= blog.html_content%>
-        </div>
-        <div class="blog-content-footer">
-            <span><%= blog.time.day %></span>
-            <%if(blog.tags){%>
-            <% blog.tags.forEach(function(tag){ %>
-            <a href="tag/<%=tag.tag%>" target="_blank" class="pull-right" title="<%=tag.tag%>">
-                <i class="fa fa-tags"></i>
-            </a>
-            <%})%>
-            <%}else{%>
-            <a href="tag/" target="_blank" class="pull-right">
-                <i class="fa fa-tags"></i>
+<div class="container all-blog">
+    <div class="page-title">
+        <h4>&nbsp;</h4>
+    </div>
+    <div class="list-container">
+        <div class="article-list thumbnails" id="divbloglist">
+            <%if(blogs.length){%>
+            <% blogs.forEach(function(blog){ %>
+            <div
+            <%if(blog.imgs){%> class="article have-img"<%}else{%> class="article "<%}%>
+            >
+            <%if(blog.imgs){%>
+            <a class="wrap-img">
+                <img src='<%=blog.imgs[0]%>'>
             </a>
             <%}%>
+            <div>
+                <div class="list-top">
+                    <time class="timeago" datetime='<%=blog.createdate%>'></time>
+                </div>
+                <h4 class="title">
+                    <a href='./blog/<%= blog._id %>' target="_blank"><%= blog.title %></a>
+                </h4>
+                <div class="list-footer">
+                    <a target="_blank" href="">
+                        阅读 <%= blog.pv%>
+                    </a>
+                    <a target="_blank" href="">
+                        · 评论 93
+                    </a>
+                    <span> · 喜欢 103</span>
+                    <span> · 打赏 1</span>
+                    <%if(blog.tags){%>
+                    <% blog.tags.forEach(function(tag){ %>
+                    <a href="tag/<%=tag.tag%>" target="_blank" class="pull-right" title="<%=tag.tag%>">
+                        <i class="fa fa-tags"></i>
+                    </a>
+                    <%})%>
+                    <%}else{%>
+                    <a href="tag/" target="_blank" class="pull-right">
+                        <i class="fa fa-tags"></i>
+                    </a>
+                    <%}%>
+                </div>
+            </div>
         </div>
+        <% }) %>
+        <%if(!isLastPage){%>
+        <div class="load-more">
+            <button data-loading-text="loading..." type="button" data-page="1"
+                    data-last_date="<%=blogs[blogs.length-1].createdate%>"
+                    data-color="maleskine"
+                    class="load-button" onclick="getNextPageBlog(this)">
+                <span class="ladda-label">点击查看更多</span>
+                <span class="ladda-spinner"></span>
+            </button>
+        </div>
+        <%} %>
+        <%}%>
     </div>
-    <%})%>
-    <%if(!isLastPage){%>
-    <div class="row ajax text-center">
-        <button data-loading-text="loading..." type="button" data-page="1" data-last_date ="<%=blogs[blogs.length-1].createdate%>"
-                class="btn-primary btn btn-block btn-large" onclick="getNextPageBlog(this)">More
-        </button>
-    </div>
-    <%} } else{%>
-    <div>
-        暂无日志信息！
-    </div>
-    <%}%>
 </div>
+
 <% include ../footer.html %>
 <script type="text/javascript" src="../../scripts/blog/blogoperation.js"></script>
